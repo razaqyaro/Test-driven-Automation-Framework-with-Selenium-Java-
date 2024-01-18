@@ -39,26 +39,15 @@ public class BaseTest {
         String chromeBrowser = prop.getProperty("chromeBrowser");
         String firefoxBrowser = prop.getProperty("firefoxBrowser");
         String edgeBrowser = prop.getProperty("edgeBrowser");
-        if (edgeBrowser.equalsIgnoreCase("edge")) {
-            EdgeOptions options = new EdgeOptions();
-            options.setBinary("/usr/bin/microsoft-edge"); // Full path to Edge binary
+        if (chromeBrowser.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
 
-            System.setProperty("webdriver.edge.driver", System.getProperty(userDirectory)+"//src//browserDrivers//msedge");
-            driver = new EdgeDriver(options);
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
         }
 
-//        else if(firefoxBrowser.equalsIgnoreCase("firefox"))
-//        {
-//            FirefoxOptions options = new FirefoxOptions();
-//            options.addArguments("--headless");
-//            driver = new FirefoxDriver();
-//        }
-//        else if(edgeBrowser.equalsIgnoreCase("edge"))
-//        {
-//            EdgeOptions options = new EdgeOptions();
-//            options.addArguments("--headless");
-//            driver = new FirefoxDriver();
-//        }
         else {
             System.out.println("The browser type is not configured.");
         }
