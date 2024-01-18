@@ -39,11 +39,14 @@ public class BaseTest {
         String chromeBrowser = prop.getProperty("chromeBrowser");
         String firefoxBrowser = prop.getProperty("firefoxBrowser");
         String edgeBrowser = prop.getProperty("edgeBrowser");
-        if(edgeBrowser.equalsIgnoreCase("edge"))
-        {
+        if (edgeBrowser.equalsIgnoreCase("edge")) {
+            EdgeOptions options = new EdgeOptions();
+            options.setBinary("/usr/bin/microsoft-edge"); // Full path to Edge binary
 
-            driver = new EdgeDriver();
+            System.setProperty("webdriver.edge.driver", System.getProperty(userDirectory)+"//src//browserDrivers//msedge");
+            driver = new EdgeDriver(options);
         }
+
 //        else if(firefoxBrowser.equalsIgnoreCase("firefox"))
 //        {
 //            FirefoxOptions options = new FirefoxOptions();

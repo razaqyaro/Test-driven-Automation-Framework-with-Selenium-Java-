@@ -19,5 +19,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+
+      - name: Kill existing Edge processes
+        run: pkill -f "msedge"
+
       - name: Run Test Suites with Maven
         run: mvn test --file pom.xml
