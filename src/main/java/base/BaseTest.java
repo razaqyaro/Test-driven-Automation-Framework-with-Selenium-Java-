@@ -38,14 +38,17 @@ public class BaseTest {
         String edgeBrowser = prop.getProperty("edgeBrowser");
         if(chromeBrowser.equalsIgnoreCase("chrome"))
         {
+            System.setProperty("webdriver.chrome.driver", System.getProperty(userDirectory)+"//src//browserDrivers//chromedriver.exe");
             driver = new ChromeDriver();
         }
         else if(firefoxBrowser.equalsIgnoreCase("firefox"))
         {
+            System.setProperty("webdriver.chrome.driver", System.getProperty(userDirectory)+"//src//browserDrivers//geckodriver.exe");
             driver = new FirefoxDriver();
         }
         else if(edgeBrowser.equalsIgnoreCase("edge"))
         {
+            System.setProperty("webdriver.chrome.driver", System.getProperty(userDirectory)+"//src//browserDrivers//msedgedriver.exe");
             driver = new FirefoxDriver();
         }
         else {
