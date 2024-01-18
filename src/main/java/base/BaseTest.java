@@ -38,11 +38,10 @@ public class BaseTest {
         String chromeBrowser = prop.getProperty("chromeBrowser");
         String firefoxBrowser = prop.getProperty("firefoxBrowser");
         String edgeBrowser = prop.getProperty("edgeBrowser");
-        if(chromeBrowser.equalsIgnoreCase("chrome"))
+        if(firefoxBrowser.equalsIgnoreCase("firefox"))
         {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
-            driver = new ChromeDriver();
+
+            driver = new FirefoxDriver();
         }
 //        else if(firefoxBrowser.equalsIgnoreCase("firefox"))
 //        {
