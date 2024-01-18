@@ -30,7 +30,7 @@ public class BaseTest {
     {
         final String userDirectory = "user.dir";
         Properties prop = new Properties();
-        try (FileInputStream fileInStream = new FileInputStream(System.getProperty(userDirectory) + "\\src\\main\\java\\configurations\\BrowserConfig.properties")) {
+        try (FileInputStream fileInStream = new FileInputStream(System.getProperty(userDirectory) + "//src//main//java//configurations//BrowserConfig.properties")) {
             prop.load(fileInStream);
         }
         String chromeBrowser = prop.getProperty("chromeBrowser");

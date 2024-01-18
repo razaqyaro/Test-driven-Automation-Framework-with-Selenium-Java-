@@ -7,5 +7,3 @@ T
 $src/main/java/pages/PageObject3.java,1\2\122043a246b9861083c30e17280a06beab67c4f0
 T
 $src/main/java/pages/PageObject2.java,4\c\4cecd0b14db64e83cdacdb46020d4983933e8a68
-P
- src/main/java/reports/index.html,6\0\60393326ce6994778ed1192636ab49f2013edd27

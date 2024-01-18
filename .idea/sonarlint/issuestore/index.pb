@@ -7,5 +7,3 @@ T
 $src/main/java/pages/PageObject3.java,1\2\122043a246b9861083c30e17280a06beab67c4f0
 X
 (src/test/java/data/LoginCredentials.json,e\c\ec7cc8af1eab7fca174c4cfa8b0e7f041800ce2e
-P
- src/main/java/reports/index.html,6\0\60393326ce6994778ed1192636ab49f2013edd27
