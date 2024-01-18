@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -38,10 +39,10 @@ public class BaseTest {
         String chromeBrowser = prop.getProperty("chromeBrowser");
         String firefoxBrowser = prop.getProperty("firefoxBrowser");
         String edgeBrowser = prop.getProperty("edgeBrowser");
-        if(firefoxBrowser.equalsIgnoreCase("firefox"))
+        if(edgeBrowser.equalsIgnoreCase("edge"))
         {
 
-            driver = new FirefoxDriver();
+            driver = new EdgeDriver();
         }
 //        else if(firefoxBrowser.equalsIgnoreCase("firefox"))
 //        {
