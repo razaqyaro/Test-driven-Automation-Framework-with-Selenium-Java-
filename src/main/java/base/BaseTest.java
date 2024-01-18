@@ -10,8 +10,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 
 import java.io.File;
@@ -38,14 +40,20 @@ public class BaseTest {
         String edgeBrowser = prop.getProperty("edgeBrowser");
         if(chromeBrowser.equalsIgnoreCase("chrome"))
         {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
             driver = new ChromeDriver();
         }
         else if(firefoxBrowser.equalsIgnoreCase("firefox"))
         {
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--headless");
             driver = new FirefoxDriver();
         }
         else if(edgeBrowser.equalsIgnoreCase("edge"))
         {
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("--headless");
             driver = new FirefoxDriver();
         }
         else {
