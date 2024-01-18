@@ -44,18 +44,18 @@ public class BaseTest {
             options.addArguments("--headless");
             driver = new ChromeDriver();
         }
-        else if(firefoxBrowser.equalsIgnoreCase("firefox"))
-        {
-            FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("--headless");
-            driver = new FirefoxDriver();
-        }
-        else if(edgeBrowser.equalsIgnoreCase("edge"))
-        {
-            EdgeOptions options = new EdgeOptions();
-            options.addArguments("--headless");
-            driver = new FirefoxDriver();
-        }
+//        else if(firefoxBrowser.equalsIgnoreCase("firefox"))
+//        {
+//            FirefoxOptions options = new FirefoxOptions();
+//            options.addArguments("--headless");
+//            driver = new FirefoxDriver();
+//        }
+//        else if(edgeBrowser.equalsIgnoreCase("edge"))
+//        {
+//            EdgeOptions options = new EdgeOptions();
+//            options.addArguments("--headless");
+//            driver = new FirefoxDriver();
+//        }
         else {
             System.out.println("The browser type is not configured.");
         }

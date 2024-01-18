@@ -2,11 +2,11 @@ package testCases;
 
 import base.BaseTest;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.time.Duration;
+
 
 public class TestCase1 extends BaseTest
 {
