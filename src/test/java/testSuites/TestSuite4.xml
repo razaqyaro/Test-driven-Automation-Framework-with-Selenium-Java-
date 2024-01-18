@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <listeners>
+        <listener class-name="listeners.Listeners"/>
+    </listeners>
+    <test name="errorTest" >
+        <classes>
+            <class name="testCases.TestCase1"/>
+        </classes>
+    </test>
+    <test name="errorTest3" >
+        <classes>
+            <class name="testCases.TestCase2"/>
+        </classes>
+    </test>
+
+</suite>

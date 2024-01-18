@@ -8,13 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import reports.ExtentReporterNG;
+import resources.Reporter;
+
 
 import java.io.IOException;
 
 public class Listeners extends BaseTest implements ITestListener
 {
-    ExtentReports extent = ExtentReporterNG.getReportObject();
+    ExtentReports extent = Reporter.getReportObject();
     ExtentTest test;
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
     public void onTestStart(ITestResult result)
