@@ -40,12 +40,9 @@ public class BaseTest {
         String firefoxBrowser = prop.getProperty("firefoxBrowser");
         String edgeBrowser = prop.getProperty("edgeBrowser");
         if (chromeBrowser.equalsIgnoreCase("chrome")) {
-            ChromeOptions options = new ChromeOptions();
+            driver = new ChromeDriver();
 
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--headless");
-            driver = new ChromeDriver(options);
+
         }
 
         else {
@@ -55,6 +52,14 @@ public class BaseTest {
 
         return driver;
     }
+    public static String setBaseUrl() throws IOException {
+        Properties prop = new Properties();
+        try (FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "//src/main/java/configurations/BrowserConfig.properties")) {
+            prop.load(fileInputStream);
+        }
+        return prop.getProperty("baseUrl");
+    }
+
     public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
         String jsonContent = FileUtils.readFileToString(new File(filePath));
         ObjectMapper mapper = new ObjectMapper();
