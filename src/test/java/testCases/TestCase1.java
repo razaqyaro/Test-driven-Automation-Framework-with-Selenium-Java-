@@ -26,7 +26,6 @@ public class TestCase1 extends BaseTest
     {
         String username = logInCredentials.get("Username"), password = logInCredentials.get("Password");
 
-
         driver = initializeDriver();
         driver.get(setBaseUrl());
         driver.findElement(By.id("username")).sendKeys(username);
