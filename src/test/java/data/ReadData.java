@@ -15,7 +15,7 @@ public class ReadData
 {
     @DataProvider
     public Iterator<Object[]> getDataFromJson() throws IOException {
-        List<Map<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "\\src\\test\\java\\data\\LoginCredentials.json");
+        List<Map<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "//src//test//java//data//LoginCredentials.json");
 
         if (data.isEmpty()) {
             throw new RuntimeException("No data found in the JSON file");
