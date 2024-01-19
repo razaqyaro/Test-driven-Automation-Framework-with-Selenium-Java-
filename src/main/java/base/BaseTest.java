@@ -44,8 +44,10 @@ public class BaseTest {
             ChromeOptions options = new ChromeOptions();
             if(System.getenv("RUNNER_OS") != null) {
                 driverExtension = "-linux";
-                System.setProperty("webdriver.chrome.driver", System.getProperty(userDirectory)+"//src//browserDrivers//chromedriver" +driverExtension);
-
+                System.setProperty("webdriver.chrome.driver", System.getProperty(userDirectory)+"//src//browserDrivers//chromedriver-linux" +driverExtension);
+                options.addArguments("disable-infobars");
+                var headless = Boolean.parseBoolean(System.getenv("HEADLESS_CHROME"));
+                options.addArguments(String.valueOf(headless));
             }
             driver = new ChromeDriver(options);
             driver.manage().window().setSize(new Dimension(1440, 900));

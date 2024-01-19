@@ -1,26 +1,23 @@
-# Event name
 name: on_push
-# When the event should run
 on:
   push:
     branch:
-      - "**" # This will run on all branches amd must be quoted to be handled by yaml
-# What jobs to execute
 jobs:
 
   build_and_test:
     runs-on: ubuntu-latest
+    env:
+      RUNNER_OS: true
+      HEADLESS_CHROME: true
     steps:
       - uses: actions/checkout@v2
-        # install java
       - uses: actions/setup-java@v2
 
         with:
           distribution: 'zulu'
           java-version: 17
-        # Run mvn test
       - name: Run tests with maven
         run: mvn test
 
-          # Handle remote server chromedriver
+          # Handle remote server chromedriver-linux
       # What steps within each job
