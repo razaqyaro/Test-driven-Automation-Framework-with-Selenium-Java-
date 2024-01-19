@@ -21,6 +21,6 @@ jobs:
         # Run mvn test
       - name: Run tests with maven
         run: mvn test
-        working-directory: TestFramework
+
           # Handle remote server chromedriver
       # What steps within each job
