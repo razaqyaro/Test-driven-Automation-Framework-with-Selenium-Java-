@@ -19,5 +19,5 @@ jobs:
       - name: Run tests with maven
         run: mvn test
 
-          # Handle remote server chromedriver-linux
+          # Handle remote server chromedriver
       # What steps within each job
