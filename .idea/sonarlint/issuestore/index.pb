@@ -9,3 +9,9 @@ W
 'src/test/java/testSuites/TestSuite2.xml,e\4\e40a04b8365658099ce2e914501bcbbccd50fec2
 W
 'src/test/java/testSuites/TestSuite3.xml,4\f\4f6fd76dd86aed96dfdaf4f58dbc089fbb21ffc4
+V
+&src/test/java/listeners/Listeners.java,d\1\d10c78bf8823aab021dea4423992e3e0878f6b0e
+U
+%src/main/java/resources/Reporter.java,5\5\55b16b399865feafc529ee54e72f94493bdf4d79
+P
+ src/main/java/reports/index.html,6\0\60393326ce6994778ed1192636ab49f2013edd27

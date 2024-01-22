@@ -1,23 +1,24 @@
-name: on_push
+name: Test Build
+
 on:
+  pull_request:
+    branches:
+      - main
   push:
-    branch:
+  workflow_dispatch:
+
 jobs:
-
-  build_and_test:
-    runs-on: ubuntu-latest
-    env:
-      RUNNER_OS: true
-      HEADLESS_CHROME: true
+  build:
+    runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v2
+      - uses: actions/checkout@v3
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
-          java-version: 17
-      - name: Run tests with maven
-        run: mvn test
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
 
-          # Handle remote server chromedriver
-      # What steps within each job
+      - name: Clean
+        run: mvn clean test
