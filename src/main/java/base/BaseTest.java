@@ -38,17 +38,12 @@ public class BaseTest {
             prop.load(fileInStream);
         }
         String browserName = prop.getProperty("browser");
-        var driverExtension = "";
         if(browserName.contains("chrome"))
         {
             ChromeOptions options = new ChromeOptions();
-            if(System.getenv("RUNNER_OS") != null) {
-                driverExtension = "-linux";
-                System.setProperty("webdriver.chrome.driver", "//src//browserDrivers//chromedriver" +driverExtension);
-                options.addArguments("disable-infobars");
+                System.setProperty("webdriver.chrome.driver", "//src//browserDrivers//chromedriver.exe");
                 var headless = Boolean.parseBoolean(System.getenv("HEADLESS_CHROME"));
                 options.addArguments(String.valueOf(headless));
-            }
             driver = new ChromeDriver(options);
             driver.manage().window().setSize(new Dimension(1440, 900));
         }
