@@ -41,7 +41,7 @@ public class BaseTest {
         if(browserName.contains("chrome"))
         {
             ChromeOptions options = new ChromeOptions();
-                System.setProperty("webdriver.chrome.driver", "//src//browserDrivers//chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver",System.getProperty(userDirectory)+ "//src//browserDrivers//chromedriver.exe");
                 var headless = Boolean.parseBoolean(System.getenv("HEADLESS_CHROME"));
                 options.addArguments(String.valueOf(headless));
             driver = new ChromeDriver(options);
