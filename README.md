@@ -86,6 +86,61 @@ Adjust the configuration settings in `src/main/java/configurations/config.proper
 View test reports generated in the `reports` directory after test execution.
 
 ---
+Certainly! Let's include a section in your README explaining the use of Maven profiles and their significance:
+
+---
+
+# Maven Profiles
+
+Maven profiles provide a way to customize build configurations based on different environments, requirements, or scenarios. In this project, profiles are utilized to enable the execution of specific sets of tests or configurations.
+
+## Profiles Overview
+
+### 1. **TestSuiteID Profile:**
+   - **ID:** `TestSuiteID`
+   - **Description:** This profile is configured to execute a specific TestNG XML suite file named `TestSuite2.xml`. It allows users to run a predefined suite of tests by activating this profile.
+
+   ```bash
+   mvn test -PTestSuiteID
+   ```
+
+### 2. **Test_Suite_Identifier Profile:**
+   - **ID:** `Test_Suite_Identifier`
+   - **Description:** This profile is set up to run a different TestNG suite file (`TestSuite3.xml`). It provides flexibility to execute a distinct suite of tests based on specific criteria.
+
+   ```bash
+   mvn test -PTest_Suite_Identifier
+   ```
+
+### 3. **Test_Identifier Profile:**
+   - **ID:** `Test_Identifier`
+   - **Description:** The `Test_Identifier` profile is configured to execute a specific TestNG XML suite file (`TestSuite4.xml`). This profile allows running a targeted set of tests specified in the corresponding suite file.
+
+   ```bash
+   mvn test -PTest_Identifier
+   ```
+
+## How to Use Profiles
+
+To run tests with a specific profile, use the `-P` option followed by the profile ID:
+
+```bash
+mvn test -PProfile_ID
+```
+
+Replace `Profile_ID` with the desired profile identifier (`TestSuiteID`, `Test_Suite_Identifier`, or `Test_Identifier`).
+
+## Why Profiles Are Useful
+
+- **Environment-specific Configurations:** Profiles allow you to set up environment-specific configurations, ensuring your tests can adapt to different environments (e.g., development, staging, production).
+
+- **Selective Test Execution:** Profiles enable the execution of specific sets of tests, helping you focus on targeted test scenarios during development or as part of your CI/CD pipeline.
+
+- **Reusability:** By using profiles, you can create a more flexible and reusable Maven project that adapts to various testing needs without modifying the core project structure.
+
+---
+
+Feel free to adjust the content to better fit your project's specifics or add any additional information you find relevant.
 
 # GitHub Actions
 
