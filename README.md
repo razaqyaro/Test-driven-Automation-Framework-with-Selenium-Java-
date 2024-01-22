@@ -86,9 +86,6 @@ Adjust the configuration settings in `src/main/java/configurations/config.proper
 View test reports generated in the `reports` directory after test execution.
 
 ---
-Certainly! Let's include a section in your README explaining the use of Maven profiles and their significance:
-
----
 
 # Maven Profiles
 
