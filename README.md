@@ -85,6 +85,62 @@ Adjust the configuration settings in `src/main/java/configurations/config.proper
 
 View test reports generated in the `reports` directory after test execution.
 
+Certainly! Adding a section about GitHub Actions to your README file is a great way to inform users about the continuous integration setup for your test automation framework. Here's a suggested section you can include:
+
+---
+
+# GitHub Actions
+
+This project is integrated with GitHub Actions to automate the testing process. GitHub Actions provides continuous integration and delivery (CI/CD) capabilities directly within your GitHub repository. The workflow configuration is defined in the `.github/workflows` directory.
+
+## Workflow Configuration
+
+The CI workflow is triggered on every push to the repository and on manual workflow dispatch events. The main workflow file is `.github/workflows/buildPipeline.yml` and it contains the following steps:
+
+```yaml
+name: Test Build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+
+    - name: Clean and Run Tests
+      run: mvn clean test
+```
+
+This workflow performs the following tasks:
+
+1. Checks out the repository.
+2. Sets up JDK 17 using the `actions/setup-java` action.
+3. Cleans the project and runs the tests using Maven.
+
+## Viewing Workflow Runs
+
+GitHub Actions provides a detailed log for each workflow run, allowing you to monitor the progress and outcome of the CI process. You can view the workflow runs by navigating to the "Actions" tab in your GitHub repository.
+
+## Contributing to the Workflow
+
+Feel free to customize the workflow according to your specific needs. You can add additional steps, integrate with other services, or modify the triggers based on your project requirements.
+
+For more information on GitHub Actions and workflow customization, refer to the [official documentation](https://docs.github.com/en/actions).
+
+---
+
+Make sure to adjust the content based on the specifics of your GitHub Actions workflow and any customizations you've made. This section provides a brief overview and guidance for users who want to understand and potentially modify the CI workflow.
+
 ## Contributing
 
 Feel free to contribute to the development of this framework. If you encounter issues or have suggestions for improvements, please open an issue or submit a pull request.
