@@ -29,7 +29,7 @@ public class TestCase1 extends BaseTest
         driver = initializeDriver();
         driver.get(setBaseUrl());
         driver.findElement(By.id("username")).sendKeys(username);
-        driver.findElement(By.id("password")).sendKeys(password);
+        driver.findElement(By.id("passwordew")).sendKeys(password);
         driver.findElement(By.id("submit")).click();
 
     }
