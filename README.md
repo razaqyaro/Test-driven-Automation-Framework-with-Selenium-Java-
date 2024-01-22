@@ -85,8 +85,6 @@ Adjust the configuration settings in `src/main/java/configurations/config.proper
 
 View test reports generated in the `reports` directory after test execution.
 
-Certainly! Adding a section about GitHub Actions to your README file is a great way to inform users about the continuous integration setup for your test automation framework. Here's a suggested section you can include:
-
 ---
 
 # GitHub Actions
