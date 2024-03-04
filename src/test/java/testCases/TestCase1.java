@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class TestCase1 extends BaseTest
 {
     public WebDriver driver;
-    @Test(dependsOnMethods = {"method", "method2"})
+    @Test()
     public void RegistrationTest() throws IOException, InterruptedException {
         driver = initializeDriver();
         Thread.sleep(3000);
