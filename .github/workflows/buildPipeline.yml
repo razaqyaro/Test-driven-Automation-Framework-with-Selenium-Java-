@@ -23,6 +23,9 @@ jobs:
       - name: Clean
         run: mvn clean test
 
+      - name: Make Directory for results
+        run: mkdir -p testResults
+
       - name: Output the run Details
         uses: actions/upload-artifact@v2
         with:
