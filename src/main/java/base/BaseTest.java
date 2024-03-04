@@ -71,7 +71,10 @@ public class BaseTest {
     @AfterMethod
     public void tearDown()
     {
-        driver.close();
+        /**
+         *  Configure either driver.close() or driver.quit() here
+         */
+        driver.quit();
     }
 }
 
