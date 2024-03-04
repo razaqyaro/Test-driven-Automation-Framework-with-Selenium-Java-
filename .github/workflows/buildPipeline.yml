@@ -5,16 +5,19 @@ on:
     branches:
       - main
   push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v2
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -22,12 +25,15 @@ jobs:
 
       - name: Make Directory for results
         run: mkdir -p testResults
-      - name: Clean
-        run: mvn clean test
 
+      - name: Clean and Run Tests
+        run: |
+          mvn clean test
+          # Assuming test results are generated in the target/surefire-reports directory
+          cp -r target/surefire-reports/* testResults/
 
       - name: Output the run Details
         uses: actions/upload-artifact@v2
         with:
-                name: RunReports
-                path: testResults
+          name: RunReports
+          path: testResults
