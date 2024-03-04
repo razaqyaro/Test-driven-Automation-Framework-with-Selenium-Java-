@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class TestCase1 extends BaseTest
 {
     public WebDriver driver;
-    @Test
+    @Test(dependsOnMethods = {"method", "method2"})
     public void RegistrationTest() throws IOException, InterruptedException {
         driver = initializeDriver();
         Thread.sleep(3000);
@@ -33,7 +33,7 @@ public class TestCase1 extends BaseTest
         driver.findElement(By.id("submit")).click();
 
     }
-    @Test
+    @Test()
     public void AddProductTest()
     {
 
