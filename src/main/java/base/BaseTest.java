@@ -68,13 +68,6 @@ public class BaseTest {
         return System.getProperty(userDirectory)+"//src//main//java//report//"+ testCaseName +".png";
     }
 
-    @AfterMethod
-    public void tearDown()
-    {
-        /**
-         *  Configure either driver.close() or driver.quit() here
-         */
-        driver.quit();
-    }
+
 }
 
